@@ -1,21 +1,21 @@
 /*
  * jsCalendar v1.4.4-beta
- * 
- * 
+ *
+ *
  * MIT License
- * 
+ *
  * Copyright (c) 2018 Grammatopoulos Athanasios-Vasileios
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,10 +23,9 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  */
-
-
+ 
 /* Default Theme */
 	/* General style */
 		.jsCalendar * {
@@ -42,15 +41,15 @@
 		.jsCalendar table {
 			background-color: #FFFFFF;
 			border-collapse: collapse;
-			border-radius: 4px;
-			box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+			border-radius: calc(var(--scale-factor) * 4px);
+			box-shadow: 0 0 calc(var(--scale-factor) * 2px) rgba(0, 0, 0, 0.4);
 			color: #000000;
 			font-family: Tahoma, Geneva, sans-serif;
-			margin: 5px;
+			margin: calc(var(--scale-factor) * 5px);
 		}
 		.jsCalendar thead .jsCalendar-title {
-			height: 40px;
-			line-height: 40px;
+			height: calc(var(--scale-factor) * 40px);
+			line-height: calc(var(--scale-factor) * 40px);
 		}
 		.jsCalendar thead .jsCalendar-title-left {
 			float: left;
@@ -60,18 +59,18 @@
 		}
 		.jsCalendar thead .jsCalendar-nav-left,
 		.jsCalendar thead .jsCalendar-nav-right {
-			border-radius: 10px;
+			border-radius: calc(var(--scale-factor) * 10px);
 			color: #999999;
 			cursor: pointer;
 			font-family: "Courier New", Courier, monospace;
-			font-size: 12px;
+			font-size: calc(var(--scale-factor) * 12px);
 			font-weight: bold;
-			height: 20px;
-			line-height: 20px;
-			margin: 10px 8px;
+			height: calc(var(--scale-factor) * 20px);
+			line-height: calc(var(--scale-factor) * 20px);
+			margin: calc(var(--scale-factor) * 10px) calc(var(--scale-factor) * 8px);
 			text-align: center;
 			transition: color 0.2s, background-color 0.2s;
-			width: 20px;
+			width: calc(var(--scale-factor) * 20px);
 		}
 		.jsCalendar thead .jsCalendar-nav-left:hover,
 		.jsCalendar thead .jsCalendar-nav-right:hover {
@@ -87,9 +86,9 @@
 		.jsCalendar thead .jsCalendar-title-name {
 			cursor: default;
 			float: left;
-			font-size: 18px;
+			font-size: calc(var(--scale-factor) * 18px);
 			font-weight: lighter;
-			padding: 0 20px;
+			padding: 0 calc(var(--scale-factor) * 20px);
 		}
 		.jsCalendar thead .jsCalendar-nav-left:after {
 			content: "<";
@@ -102,55 +101,56 @@
 		}
 		.jsCalendar thead .jsCalendar-week-days th,
 		.jsCalendar tbody td {
-			border-radius: 18px;
+			border-radius: calc(var(--scale-factor) * 18px);
 			cursor: default;
 			display: inline-block;
-			font-size: 12px;
+			font-size: calc(var(--scale-factor) * 12px);
 			font-weight: lighter;
-			height: 36px;
-			line-height: 36px;
-			margin: 1px 2px;
+			height: calc(var(--scale-factor) * 36px);
+			line-height: calc(var(--scale-factor) * 36px);
+			margin: calc(var(--scale-factor) * 1px) calc(var(--scale-factor) * 2px);
 			text-align: center;
 			transition: color 0.1s, background-color 0.2s;
-			width: 36px;
+			width: calc(var(--scale-factor) * 36px);
 		}
 		.jsCalendar tbody td:hover {
 			background-color: #E6E6E6;
 		}
 		.jsCalendar tbody td.jsCalendar-selected {
 			background-color: #FFFFFF;
-			border: 2px solid #E6E6E6;
-			height: 32px;
-			line-height: 32px;
-			width: 32px;
+			border: calc(var(--scale-factor) * 2px) solid #E6E6E6;
+			height: calc(var(--scale-factor) * 32px);
+			line-height: calc(var(--scale-factor) * 32px);
+			width: calc(var(--scale-factor) * 32px);
 			box-sizing: content-box;
 		}
 		.jsCalendar tbody td.jsCalendar-current {
 			background-color: #52C9FF;
-			border-radius: 18px;
+			border-radius: calc(var(--scale-factor) * 18px);
 			color: #FFFFFF;
 		}
 		.jsCalendar tbody td div.jsCalendar-event-marks {
 			position: relative;
 			display: flex;
-			bottom: 7px;
-			margin: 0px; 
-			padding:0px;
-			height: 5px;
+			bottom: calc(var(--scale-factor) * 7px);
+			margin: 0px;
+			padding: 0px;
+			height: calc(var(--scale-factor) * 5px);
 		}
 		.jsCalendar tbody td div.jsCalendar-event-marks .jsCalendar-event-mark {
-			width: 6px;
-			height: 4px;
+			width: calc(var(--scale-factor) * 6px);
+			height: calc(var(--scale-factor) * 6px);
+			border-radius: 50%;
 			display: inline;
-			margin: 0px 1px;
+			margin: 0px calc(var(--scale-factor) * 1px);
 		}
 		.jsCalendar tbody td div.jsCalendar-event-marks .jsCalendar-event-more-mark {
-			font-size: 8px;
+			font-size: calc(var(--scale-factor) * 8px);
 			position: relative;
-			bottom: 16px;
-			right: -2px;
+			bottom: calc(var(--scale-factor) * 16px);
+			right: calc(var(--scale-factor) * -2px);
 		}
-		
+
 		.jsCalendar tbody td.jsCalendar-previous,
 		.jsCalendar tbody td.jsCalendar-next {
 			color: #CACACA;
@@ -162,11 +162,11 @@
 
 		.jsCalendar thead {
 			display: block;
-			margin: 4px 4px 0 4px;
+			margin: calc(var(--scale-factor) * 4px) calc(var(--scale-factor) * 4px) 0 calc(var(--scale-factor) * 4px);
 		}
 		.jsCalendar tbody {
 			display: block;
-			margin: 0 4px 4px 4px;
+			margin: 0 calc(var(--scale-factor) * 4px) calc(var(--scale-factor) * 4px) calc(var(--scale-factor) * 4px);
 		}
 		.jsCalendar ::-moz-selection {
 			background: #83D8FF;
@@ -375,7 +375,7 @@
 			line-height: 36px;
 		}
 		.jsCalendar.classic-theme tbody td.jsCalendar-current.jsCalendar-selected{
-			background-color: #52C9FF; 
+			background-color: #52C9FF;
 			text-shadow: 0 0 3px #000000;
 		}
 	/* Yellow */
